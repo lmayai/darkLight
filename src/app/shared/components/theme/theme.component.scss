@@ -19,10 +19,6 @@
   text-transform: uppercase;
   border-radius: $border-radius;
 
-  @include mobile {
-    width: 85%;
-  }
-
   .title {
     box-sizing: border-box;
     display: flex;
@@ -30,6 +26,9 @@
     align-items: center;
     padding: $padding*2 $padding $padding;
 
+    @include mobile {
+      padding: $padding $padding/2 $padding/2;
+    }
   }
   
   .actions {
@@ -46,6 +45,10 @@
       font-family: 'Orbitron';
       font-weight: bold;
       margin: $margin;
+
+      @include mobile {
+        padding: $padding $padding;
+      }
     }
 
     .btn:hover {
@@ -59,14 +62,26 @@
       color: getColor(gold);
       box-shadow: 0 0 5px 0 getColor(gold);
     }
+
+    .btn.dark:hover {
+      background-color: lighten(getColor(dark-black), 5%);
+    }
     
     .btn.light {
       background-color: getColor(yellow);
       color: getColor(dark-black);
       box-shadow: 0 0 5px 0 getColor(dark-black);
     }
-
+    
+    .btn.light:hover {
+      background-color: darken(getColor(yellow), 5%);
+    }
   }
+
+  @include mobile {
+    width: 80%;
+  }
+
 }
 
 .container.dark:hover {
