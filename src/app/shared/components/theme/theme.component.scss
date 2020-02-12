@@ -1,0 +1,92 @@
+@import 'mixins';
+@import 'fullcolor';
+@import 'variables';
+@import 'fonts';
+
+.modal-theme {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.container {
+  height: auto;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: $border-radius;
+
+  @include mobile {
+    width: 85%;
+  }
+
+  .title {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $padding*2 $padding $padding;
+
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; 
+    padding: $padding $padding $padding*2;  
+
+    .btn {
+      border: none;
+      border-radius: $border-radius;
+      padding: $padding*2 $padding*4;
+      font-size: $font-l;
+      font-family: 'Orbitron';
+      font-weight: bold;
+      margin: $margin;
+    }
+
+    .btn:hover {
+      transform: scale(1.1, 1.1);
+      transition: 0.1s;
+      cursor: pointer;
+    }
+
+    .btn.dark {
+      background-color: getColor(dark-black);
+      color: getColor(gold);
+      box-shadow: 0 0 5px 0 getColor(gold);
+    }
+    
+    .btn.light {
+      background-color: getColor(yellow);
+      color: getColor(dark-black);
+      box-shadow: 0 0 5px 0 getColor(dark-black);
+    }
+
+  }
+}
+
+.container.dark:hover {
+  transition: 0.1s;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.container.light:hover {
+  transition: 0.1s;
+  box-shadow: 0 0 10px 0 getColor(dark-black);
+}
+
+.container.dark {
+  color: getColor(white);
+  background-color: getColor(dark-gray);
+  box-shadow: 0 0 3px 0 white;
+}
+
+.container.light {
+  color: getColor(dark-black);
+  background-color: getColor(light-gray);
+  box-shadow: 0 0 3px 0 getColor(dark-black);
+}

@@ -1,0 +1,14 @@
+@import 'fullcolor';
+
+.layout {
+  height: 100%;
+}
+
+.layout.dark {
+  background-color: getColor(dark-black);
+}
+
+.layout.default {
+  background-color: getColor(white);
+}
+

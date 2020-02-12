@@ -1,0 +1,16 @@
+$colors: (
+  white: #FFF,
+  black: #000,
+  red: #E36049,
+  dark-black: #262626,
+  dark-blue: #1a2c53,
+  dark-gray: #393939,
+  light-blue: #abbee6,
+  light-gray: #D6D6D6,
+  gold: #A5B05F,
+  yellow: #E5E3B3,
+);
+
+@function getColor($color) {
+  @return map-get($colors, $color)
+}   
