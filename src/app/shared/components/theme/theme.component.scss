@@ -45,6 +45,7 @@
       font-family: 'Orbitron';
       font-weight: bold;
       margin: $margin;
+      outline: none;
 
       @include mobile {
         padding: $padding $padding;
