@@ -18,6 +18,28 @@
   text-align: center;
   text-transform: uppercase;
   border-radius: $border-radius;
+  position: relative;
+
+  figure {
+    margin: 2px;
+    padding: 2px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 24px;
+    cursor: pointer;
+    border-radius: $border-radius;
+    background-color: getColor(gold);
+
+    img {
+      width: 100%;
+    }
+
+    &:hover {
+      transform: scale(1.1, 1.1);
+    }
+
+  }
 
   .title {
     box-sizing: border-box;

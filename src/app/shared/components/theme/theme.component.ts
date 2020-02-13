@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter, OnInit} from '@angular/core';
+import { ConstantsService } from 'src/app/common/services/constants.service';
 
 @Component({
   selector: 'app-theme',
@@ -7,8 +8,14 @@ import { Component, Output, EventEmitter, OnInit} from '@angular/core';
 })
 export class ThemeComponent implements OnInit {
 
-  theme = 'dark';
+  theme: string;
   @Output() themeSelected: EventEmitter<any> = new EventEmitter();
+
+  constructor(
+    private constantsService: ConstantsService,
+  ) {
+    this.theme = constantsService.theme;
+  }
 
   ngOnInit() {
     this.emitThemeChange(this.theme);
